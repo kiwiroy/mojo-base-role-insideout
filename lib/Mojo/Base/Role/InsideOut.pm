@@ -70,9 +70,11 @@ sub _count_objects {
 
 =head1 NAME
 
-Mojo::File::Role::InsideOut
+Mojo::File::Role::InsideOut - The old inside out trick.
 
 =head1 DESCRIPTION
+
+  L<perlobj.pod#Inside-Out-objects>
 
 =head1 METHODS
 

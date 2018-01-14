@@ -24,7 +24,7 @@ package main;
 use Test::More;
 
 my $io = new_ok('Test::InsideOut');
-diag $io;
+
 is $io->foo, 'bar', 'foo == bar';
 is $io->foo('foo'), $io, 'chaining';
 is $io->foo, 'foo', 'foo';
