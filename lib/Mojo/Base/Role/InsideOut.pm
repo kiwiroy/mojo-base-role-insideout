@@ -56,6 +56,8 @@ after DESTROY => sub {
   # warn Data::Dumper::Dumper \%OBJECT_REGISTRY;
 };
 
+sub DESTROY { }
+
 sub _count_objects {
   my %object_per_class;
   for my $class(keys %OBJECT_REGISTRY) {
@@ -74,7 +76,8 @@ Mojo::File::Role::InsideOut - The old inside out trick.
 
 =head1 DESCRIPTION
 
-  L<perlobj.pod#Inside-Out-objects>
+Using the once "popular", though not universally adopted,
+L<Inside Out Objects|perlobj.pod#Inside-Out-objects>
 
 =head1 METHODS
 

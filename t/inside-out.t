@@ -33,13 +33,15 @@ is $io->bar, 'foobar', 'bar == foobar';
 is $io->bar('bar'), $io, 'chaining';
 is $io->bar, 'bar', 'set';
 
-is $io->_count_objects->{'Mojo::Base::Role::InsideOut'}, 1, 'one object';
+is Mojo::Base::Role::InsideOut->_count_objects->{'Mojo::Base::Role::InsideOut'},
+  1, 'one object';
 
 my $again = new_ok('Test::Again');
 is $again->rate, 1.5, 'rate default';
 is $again->rate(2.0)->rate, 2.0, 'set rate';
 
-is $again->_count_objects->{'Mojo::Base::Role::InsideOut'}, 2, 'two objects';
+is Mojo::Base::Role::InsideOut->_count_objects->{'Mojo::Base::Role::InsideOut'},
+  2, 'two objects';
 
 undef $io;
 is Mojo::Base::Role::InsideOut->_count_objects->{'Mojo::Base::Role::InsideOut'},
