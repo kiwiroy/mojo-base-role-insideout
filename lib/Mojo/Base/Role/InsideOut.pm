@@ -77,7 +77,7 @@ Mojo::File::Role::InsideOut - The old inside out trick.
 =head1 DESCRIPTION
 
 Using the once "popular", though not universally adopted,
-L<Inside Out Objects|distribution/perl/perlobj.pod#Inside-Out-objects>
+L<Inside Out Objects|distribution/perl/pod/perlobj.pod#Inside-Out-objects>
 
 =head1 METHODS
 
