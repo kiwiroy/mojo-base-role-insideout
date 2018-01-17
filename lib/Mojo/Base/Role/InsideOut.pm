@@ -50,6 +50,14 @@ sub attr {
   }
 }
 
+sub clear {
+  my ($self, $attrs) = @_;
+  my $id = Scalar::Util::refaddr $self;
+  for my $attr (@{ref $attrs eq 'ARRAY' ? $attrs : [$attrs]}) {
+    delete $OBJECT_REGISTRY{$CLASS}{$id}{$attr};
+  }
+}
+
 after DESTROY => sub {
   my $id = Scalar::Util::refaddr +shift;
   # require Data::Dumper;
@@ -109,5 +117,9 @@ import on roles, they should be called thus:
 This is synonymous with L<attr|Mojo::Base#attr> from L<Mojo::Base>, but uses a
 lexically scoped hash to record the properties in line with the
 L<inside out|perlobj#Inside-Out-objects> model.
+
+=head2 clear
+
+Because it is difficult to run C<<delete $self->{attr_name}>> otherwise.
 
 =cut
