@@ -97,7 +97,7 @@ __END__
 
 Mojo::Base::Role::InsideOut - The old inside out trick.
 
-=for html
+=begin html
 
 <!-- Travis -->
 <a href="https://travis-ci.org/kiwiroy/mojo-base-role-insideout">
