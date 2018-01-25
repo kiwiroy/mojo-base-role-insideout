@@ -1,5 +1,3 @@
-.proverc
-.ship.conf
 Changes
 cpanfile
 lib/Mojo/Base/Role/InsideOut.pm
