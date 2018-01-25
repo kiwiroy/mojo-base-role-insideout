@@ -97,6 +97,28 @@ __END__
 
 Mojo::Base::Role::InsideOut - The old inside out trick.
 
+=for html
+
+<!-- Travis -->
+<a href="https://travis-ci.org/kiwiroy/mojo-base-role-insideout">
+  <img src="https://travis-ci.org/kiwiroy/mojo-base-role-insideout.svg?branch=master"
+       alt="Build Status" />
+</a>
+
+<!-- Coveralls -->
+<a href='https://coveralls.io/github/kiwiroy/mojo-base-role-insideout?branch=master'>
+  <img src='https://coveralls.io/repos/github/kiwiroy/mojo-base-role-insideout/badge.svg?branch=master'
+       alt='Coverage Status' />
+</a>
+
+<!-- Kritika -->
+<a href="https://kritika.io/users/kiwiroy/repos/4971586310615065/heads/master/">
+  <img src="https://kritika.io/users/kiwiroy/repos/4971586310615065/heads/master/status.svg"
+       alt="Kritika Analysis Status"/>
+</a>
+
+=end html
+
 =head1 DESCRIPTION
 
 In order to add properties to L<non hash objects|perlobj#Non-Hash-Objects> such
