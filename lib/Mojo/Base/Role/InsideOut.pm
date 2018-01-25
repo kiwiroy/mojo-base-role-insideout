@@ -8,7 +8,7 @@ use Scalar::Util ();
 my %OBJECT_REGISTRY;
 my $CLASS = __PACKAGE__;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub attr {
   my ($self, $attrs, $value) = @_;

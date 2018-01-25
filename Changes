@@ -1,5 +1,8 @@
 Revision history for perl distribution Mojo-Base-Role-InsideOut
 
+0.03 2018-01-25T17:34:33+1300
+ - tidy up and documentation
+
 0.02 2018-01-17T13:47:06+1300
  - Added clear method
 
