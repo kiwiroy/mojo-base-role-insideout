@@ -70,5 +70,6 @@
 ^README\.pod$
 ^README$
 ^\.ship\.conf$
+^\.perltidyrc$
 ^\.proverc$
 ^\.travis\.yml$
