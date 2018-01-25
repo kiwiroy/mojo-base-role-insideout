@@ -144,7 +144,7 @@ L<Inside Out Objects|perlobj#Inside-Out-objects>.
 =head1 PROPERTIES
 
 No properties are available from this module, but may be defined by calling
-classes using C<__PACKAGE__->attr>.
+classes using C<<< __PACKAGE__->attr >>>.
 
 =head1 METHODS
 
@@ -161,6 +161,6 @@ L<inside out|perlobj/"Inside-Out-objects"> model.
 
 =head2 clear
 
-Because it is difficult to run C<<<delete $self->{attr_name}>>> otherwise.
+Because it is difficult to run C<<< delete $self->{attr_name} >>> otherwise.
 
 =cut
