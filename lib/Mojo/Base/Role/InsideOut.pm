@@ -121,10 +121,16 @@ Mojo::Base::Role::InsideOut - The old inside out trick.
 
 =head1 DESCRIPTION
 
-In order to add properties to L<non hash objects|perlobj#Non-Hash-Objects> such
+In order to add properties to L<non hash objects|perlobj/"Non-Hash-Objects"> such
 as L<Mojo::File>, L<Mojo::Collection> and L<Mojo::ByteStream>, this
 L<role|Role::Tiny> uses the once "experimental", though not universally adopted,
 L<Inside Out Objects|perlobj#Inside-Out-objects>.
+
+=over 4
+
+=item This is B<experimental>
+
+=back
 
 =head1 SYNOPSIS
 
@@ -149,12 +155,12 @@ import on roles, they should be called thus:
 
 =head2 attr
 
-This is synonymous with L<attr|Mojo::Base#attr> from L<Mojo::Base>, but uses a
+This is synonymous with L<attr|Mojo::Base/"attr"> from L<Mojo::Base>, but uses a
 lexically scoped hash to record the properties in line with the
-L<inside out|perlobj#Inside-Out-objects> model.
+L<inside out|perlobj/"Inside-Out-objects"> model.
 
 =head2 clear
 
-Because it is difficult to run C<<delete $self->{attr_name}>> otherwise.
+Because it is difficult to run C<<<delete $self->{attr_name}>>> otherwise.
 
 =cut
