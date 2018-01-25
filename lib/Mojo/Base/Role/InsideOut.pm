@@ -18,25 +18,25 @@ sub attr {
     if ref $value && ref $value ne 'CODE';
 
   for my $attr (@{ref $attrs eq 'ARRAY' ? $attrs : [$attrs]}) {
-    Carp::croak qq{Attribute "$attr" invalid} unless $attr =~ /^[a-zA-Z_]\w*$/;
+    Carp::croak qq{Attribute "$attr" invalid} unless $attr =~ /^[a-zA-Z_]\w*$/xs;
 
     my $ref = $OBJECT_REGISTRY{ $CLASS } ||= {};
     if (ref $value) {
       monkey_patch $class, $attr, sub {
         my $id = Scalar::Util::refaddr $_[0];
         return
-          exists $$ref{$id}{$attr} ? $$ref{$id}{$attr} : ($$ref{$id}{$attr} = $value->($_[0]))
+          exists $ref->{$id}{$attr} ? $ref->{$id}{$attr} : ($ref->{$id}{$attr} = $value->($_[0]))
           if @_ == 1;
-        $$ref{$id}{$attr} = $_[1];
+        $ref->{$id}{$attr} = $_[1];
         $_[0];
       };
       }
     elsif (defined $value) {
       monkey_patch $class, $attr, sub {
         my $id = Scalar::Util::refaddr $_[0];
-        return exists $$ref{$id}{$attr} ? $$ref{$id}{$attr} : ($$ref{$id}{$attr} = $value)
+        return exists $ref->{$id}{$attr} ? $ref->{$id}{$attr} : ($ref->{$id}{$attr} = $value)
           if @_ == 1;
-        $$ref{$id}{$attr} = $_[1];
+        $ref->{$id}{$attr} = $_[1];
         $_[0];
       };
     }
@@ -44,10 +44,11 @@ sub attr {
       monkey_patch $class, $attr,
         sub {
           my $id = Scalar::Util::refaddr $_[0];
-          return $$ref{$id}{$attr} if @_ == 1; $$ref{$id}{$attr} = $_[1]; $_[0];
+          return $ref->{$id}{$attr} if @_ == 1; $ref->{$id}{$attr} = $_[1]; $_[0];
         };
     }
   }
+  return ;
 }
 
 sub clear {
@@ -69,15 +70,17 @@ after DESTROY => sub {
 
 sub DESTROY { }
 
-sub _count_objects {
+sub _count_objects { ## no critic (UnusedPrivateSubroutines)
   my %object_per_class;
   for my $class(keys %OBJECT_REGISTRY) {
-    $object_per_class{$class} = scalar(keys %{$OBJECT_REGISTRY{$class}});
+    $object_per_class{$class} = scalar keys %{$OBJECT_REGISTRY{$class}};
   }
   return \%object_per_class;
 }
 
 1;
+
+__END__
 
 =pod
 

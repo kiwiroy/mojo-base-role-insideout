@@ -1,5 +1,6 @@
 # -*- mode: perl; -*-
-# You can install this project with curl -L http://cpanmin.us | perl - https://github.com/hrards/mojo-base-role-insideout/archive/master.tar.gz
+# You can install this project with
+# curl -L http://cpanmin.us | perl - https://github.com/hrards/mojo-base-role-insideout/archive/master.tar.gz
 requires "perl" => "5.10.0";
 
 requires "Class::Method::Modifiers" => "2.12";
@@ -12,4 +13,7 @@ on develop => sub {
   requires 'Test::Pod';
   requires 'Test::Pod::Coverage';
   requires 'Test::CPAN::Changes';
+  requires 'Devel::Cover';
+  requires 'Devel::Cover::Report::Coveralls' => '0.11';
+  requires 'Devel::Cover::Report::Kritika' => '0.05';
 };

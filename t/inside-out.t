@@ -1,3 +1,4 @@
+## no critic (MultiplePackages, RequireFilenameMatchesPackage)
 use Mojo::Base -strict;
 
 package Test::InsideOut;
