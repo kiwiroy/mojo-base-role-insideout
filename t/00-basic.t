@@ -20,7 +20,7 @@ if(!eval 'use Test::CPAN::Changes; 1') {
     SKIP: { skip "changes_ok(@_) (Test::CPAN::Changes is required)", 4 }
   };
 }
-
+my @files;
 find(
   {
     wanted => sub { /\.pm$/ and push @files, $File::Find::name },
