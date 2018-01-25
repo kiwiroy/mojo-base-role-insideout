@@ -56,6 +56,7 @@ sub clear {
   for my $attr (@{ref $attrs eq 'ARRAY' ? $attrs : [$attrs]}) {
     delete $OBJECT_REGISTRY{$CLASS}{$id}{$attr};
   }
+  return $self;
 }
 
 after DESTROY => sub {
